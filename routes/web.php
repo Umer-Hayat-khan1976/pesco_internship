@@ -14,8 +14,8 @@ use App\Http\Controllers\SurveyController;
 */
 use Illuminate\Support\Facades\Auth;
 
-Auth::routes(); // This registers the login, logout, and registration routes
-
+// Auth::routes(); // This registers the login, logout, and registration routes
+Auth::routes(['register' => false]);
 
 // Homepage route (Welcome page)
 Route::get('/', function () {

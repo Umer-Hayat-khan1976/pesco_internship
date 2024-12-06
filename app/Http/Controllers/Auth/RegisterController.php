@@ -21,6 +21,7 @@ class RegisterController extends Controller
     | provide this functionality without requiring any additional code.
     |
     */
+    
 
     use RegistersUsers;
 
@@ -56,18 +57,30 @@ class RegisterController extends Controller
         ]);
     }
 
+
+
     /**
      * Create a new user instance after a valid registration.
      *
      * @param  array  $data
      * @return \App\Models\User
      */
-    protected function create(array $data)
+    // protected function create(array $data)
+    // {
+    //     return User::create([
+    //         'name' => $data['name'],
+    //         'email' => $data['email'],
+    //         'password' => Hash::make($data['password']),
+    //     ]);
+    // }
+        public function showRegistrationForm()
     {
-        return User::create([
-            'name' => $data['name'],
-            'email' => $data['email'],
-            'password' => Hash::make($data['password']),
-        ]);
+        abort(403, 'Registration is disabled.');
     }
+
+    //     public function register(Request $request)
+    // {
+    //     abort(403, 'Registration is disabled.');
+    //  }
+
 }
